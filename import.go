@@ -47,8 +47,8 @@ type GitHubImport struct {
 	ImportWarning         string `json:"import_warning"`
 }
 
-func (s GitHubImport) String() string {
-	return Stringify(s)
+func (gi GitHubImport) String() string {
+	return Stringify(gi)
 }
 
 // ImportRepositoryFromGitHubOptions represents the available
@@ -89,7 +89,8 @@ func (s *ImportService) ImportRepositoryFromGitHub(opt *ImportRepositoryFromGitH
 	return gi, resp, nil
 }
 
-// GitHubImport represents the response from an import from GitHub.
+// CancelledGitHubImport represents the response from a cancelled import
+// from GitHub.
 //
 // GitLab API docs:
 // https://docs.gitlab.com/ee/api/import.html#cancel-github-project-import
@@ -104,8 +105,8 @@ type CancelledGitHubImport struct {
 	ProviderLink          string `json:"provider_link"`
 }
 
-func (s CancelledGitHubImport) String() string {
-	return Stringify(s)
+func (cgi CancelledGitHubImport) String() string {
+	return Stringify(cgi)
 }
 
 // CancelGitHubProjectImportOptions represents the available
